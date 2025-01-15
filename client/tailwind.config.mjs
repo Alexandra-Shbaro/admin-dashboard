@@ -7,9 +7,18 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
+       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        softBlack:'#2C3333',
+        offWhite:'#FAFAFA',
+        lightGrey:'#E7E7E7', 
+        mediumGrey:'#5C5C5C',
+        logoOrange:'#FF8A00',
+        logoYellow:'#FFD700',
+      },
+      fontFamily: {
+        sans: ['Montserrat', 'sans-serif'],
       },
     },
   },
