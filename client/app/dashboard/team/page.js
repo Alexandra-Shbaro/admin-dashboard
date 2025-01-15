@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Plus, ChevronLeft, ChevronRight } from 'lucide-react'
-import TeamsListView from './components/TeamsListview'
+import TeamsListView from './components/TeamsListView'
 import CreateTeamForm from './components/CreateTeamForm'
 
 // Custom Button component
