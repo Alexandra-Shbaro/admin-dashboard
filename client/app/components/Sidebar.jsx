@@ -16,7 +16,7 @@ export function Sidebar() {
         <nav className="mt-4 space-y-1">
           <Link
             href="/dashboard/users"
-            className={`flex items-center rounded-lg px-4 py-2 text-sm font-medium ${["/dashboard/dash/users", "/dashboard/dash/team", "/dashboard/dash/campaign", "/dashboard/dash/client", "/dashboard/dash/alerts"].includes(pathname)
+            className={`flex items-center rounded-lg px-4 py-2 text-sm font-medium ${["/dashboard/users", "/dashboard/team", "/dashboard/campaign", "/dashboard/client", "/dashboard/alerts"].includes(pathname)
                 ? "bg-[#5C5C5C] text-white"
                 : "text-[#E7E7E7] hover:bg-[#5C5C5C]"
               }`}
