@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { Search, Bell, Mail, X } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const dummyNotifications = [
     {
@@ -39,11 +40,26 @@ const searchableItems = [
 ];
 
 const Header = () => {
+    const pathname = usePathname();
     const [headerText, setHeaderText] = useState('Default Page');
     const [notifications, setNotifications] = useState(dummyNotifications);
     const [showNotifications, setShowNotifications] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
+
+    useEffect(() => {
+        let title = 'Default Page';
+        if (pathname.startsWith('/dashboard')) {
+            title = 'Dashboard';
+        } else if (pathname.startsWith('/analytics')) {
+            title = 'Analytics';
+        } else if (pathname.startsWith('/campaigns')) {
+            title = 'Campaigns';
+        } else if (pathname.startsWith('/reports')) {
+            title = 'Reports';
+        }
+        setHeaderText(title);
+    }, [pathname]);
 
     const unreadCount = notifications.filter(n => n.status === 'unread').length;
 
@@ -71,7 +87,6 @@ const Header = () => {
     };
 
     const handleSearchResultClick = (path) => {
-        // Instead of using router.push, we'll use window.location
         window.location.href = path;
         setSearchQuery('');
         setSearchResults([]);
@@ -161,9 +176,6 @@ const Header = () => {
                             </div>
                         )}
                     </div>
-                    {/* <button className="rounded-full p-2 text-gray-700 hover:bg-gray-200/50">
-                        <Mail className="h-5 w-5" />
-                    </button> */}
                     <button className="rounded-full p-2 text-gray-700 hover:bg-gray-200/50">
                         <img src="/lumiIcon.png" alt="Settings" className="h-10 w-15" />
                     </button>
