@@ -32,11 +32,10 @@ const dummyNotifications = [
 ];
 
 const searchableItems = [
-    { title: 'Workspace Management', path: '/dashboard/workspace' },
-    { title: 'Dashboard', path: '/dashboard/dash' },
-    { title: 'Analytics', path: '/dashboard/analytics' },
-    { title: 'Campaigns', path: '/dashboard/campaigns' },
-    { title: 'Reports', path: '/dashboard/reports' },
+    { title: 'Dashboard', path: '/dashboard' },
+    { title: 'Analytics', path: '/analytics' },
+    { title: 'Campaigns', path: '/campaigns' },
+    { title: 'Reports', path: '/reports' },
 ];
 
 const Header = () => {
